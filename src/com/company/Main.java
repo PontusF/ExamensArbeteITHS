@@ -11,6 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
+
         ExampleEntity exampleObject = new ExampleEntity();
         ExampleFirstNestedEntity firstNestedEntity = new ExampleFirstNestedEntity();
         ExampleSecondNestedEntity secondNestedEntity = new ExampleSecondNestedEntity();
@@ -28,14 +29,13 @@ public class Main {
         secondNestedEntity.setName("Allan Turing");
         secondNestedEntity.setSecretInt(42);
 
-
+        //===================================================
 
         PontusConverter converter = new PontusConverter();
         String[] forbiddenFields = new String[]{ "secretField", "secretInt"};
-
         ExampleModel resultingModelObject = converter.convert(exampleObject,ExampleModel.class, forbiddenFields);
 
-
+        //===================================================
 
         System.out.println("ExampleEntity name: " + resultingModelObject.getName());
 
